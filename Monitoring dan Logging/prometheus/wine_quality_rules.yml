@@ -1,0 +1,29 @@
+groups:
+  - name: wine_quality_alerts
+    rules:
+      - alert: HighCpuUsage
+        expr: system_cpu_usage_percent > 85
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage detected"
+          description: "Penggunaan CPU sudah mencapai {{ $value }}%, threshold 85% terlampaui"
+
+      - alert: ApiDown
+        expr: api_up == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Wine Quality API is down"
+          description: "API telah down selama {{ $value }} detik, threshold 1 menit terlampaui"
+
+      - alert: PredictionDrift
+        expr: model_prediction_drift > 2.0
+        for: 3m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Prediction drift detected"
+          description: "Model telah mengalami drift prediksi sebesar {{ $value }}, threshold 2.0 terlampaui"

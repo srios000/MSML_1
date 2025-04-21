@@ -1,0 +1,45 @@
+name: Wine Quality Preprocessing
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'preprocessing/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'preprocessing/**'
+  workflow_dispatch:
+
+jobs:
+  preprocess:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install pandas numpy scikit-learn joblib ucimlrepo matplotlib seaborn
+    
+    - name: Run preprocessing script
+      run: |
+        cd preprocessing
+        python automate_Sintario-Satya.py
+    
+    - name: Commit and push preprocessed data
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add preprocessing/winequality_preprocessing/*
+        git commit -m "Update preprocessed data" || echo "No changes to commit"
+        git push "https://${{ secrets.PAT }}@github.com/${{ github.repository }}.git" HEAD:${{ github.ref }}

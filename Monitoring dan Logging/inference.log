@@ -1,0 +1,18 @@
+2025-04-21 17:37:31,150 - wine_quality_inference - ERROR - Error connecting to API: Expecting value: line 1 column 1 (char 0)
+2025-04-21 17:39:56,864 - wine_quality_inference - ERROR - Error connecting to API: Expecting value: line 1 column 1 (char 0)
+2025-04-21 17:41:41,662 - wine_quality_inference - ERROR - Error connecting to API: Expecting value: line 1 column 1 (char 0)
+2025-04-21 17:46:50,597 - wine_quality_inference - ERROR - Error connecting to API: Expecting value: line 1 column 1 (char 0)
+2025-04-21 18:07:16,571 - wine_quality_inference - ERROR - API health check failed: 503
+2025-04-21 18:12:52,106 - wine_quality_inference - ERROR - API health check failed: 503
+2025-04-21 18:13:02,985 - wine_quality_inference - ERROR - Error connecting to API: Expecting value: line 1 column 1 (char 0)
+2025-04-21 18:21:53,107 - wine_quality_inference - ERROR - Error connecting to API: Expecting value: line 1 column 1 (char 0)
+2025-04-21 18:22:05,228 - wine_quality_inference - ERROR - API health check failed: 503
+2025-04-21 18:24:35,236 - wine_quality_inference - ERROR - Error connecting to API: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E3E4448DF0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-04-21 18:26:07,397 - wine_quality_inference - ERROR - Error connecting to API: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021FEF9F8DC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-04-21 18:28:17,191 - wine_quality_inference - ERROR - API health check failed: 503
+2025-04-21 18:36:19,647 - wine_quality_inference - ERROR - Error connecting to API: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002724EA54EB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-04-21 18:37:25,921 - wine_quality_inference - INFO - API is healthy: {'status': 'healthy', 'model_type': 'RandomForestRegressor'}
+2025-04-21 18:37:25,921 - wine_quality_inference - INFO - Generating synthetic wine data
+2025-04-21 18:37:25,933 - wine_quality_inference - INFO - Generated 10 synthetic samples
+2025-04-21 18:37:25,938 - wine_quality_inference - INFO - Making batch prediction for 10 samples
+2025-04-21 18:37:27,990 - wine_quality_inference - INFO - Batch prediction successful. Latency: 2.0520s
